@@ -110,7 +110,7 @@ def only_choice(values):
             dplaces = [box for box in unit if digit in values[box]]
             if len(dplaces) == 1:
                 assign_value(values, dplaces[0], digit)
-                values[dplaces[0]] = digit
+                #values[dplaces[0]] = digit
     return values
 
 def reduce_puzzle(values):
