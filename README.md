@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Find all boxes which has two values. Compare them to find whether they are same with each other. If so, delete these two values from these peers to reduce puzzle. This strategy can be generalize to solve n-Twins problems and n-tuple problems.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: We can simply add a defination about a diagonal unit. Then, add the diagonal unit into unit_list. Our algorithm will find all peers of the given box and reduce the puzzle as before.
 
 ### Install
 
