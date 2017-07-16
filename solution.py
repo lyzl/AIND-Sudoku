@@ -62,16 +62,22 @@ def naked_twins(values):
     # Find all instances of naked twins
     # Eliminate the naked twins as possibilities for their peers
     
+    #find the boxes which have two values
     same_size_boxes = [box for box in values.keys() if len(values[box]) == 2]
     for same_size_box in same_size_boxes:
+        #define the same value, the value will be changed in each loop
         same_value = values[same_size_box]
-        #shared_peers may have one or two
+        #find peers from units
         same_value_peers = [peer for peer in peers[same_size_box] if values[peer] == same_value]
+        #find another box with same value. There can't be more than one
         if len(same_value_peers) == 1:
+            #get the peer's key
             same_value_peer = same_value_peers[0]
             peer_1, peer_2 = peers[same_size_box], peers[same_value_peer]
+            #get shared peers between the two boxes
             shared_peers = [peer2 for peer2 in peer_2 if peer2 in peer_1]
             for p in shared_peers:
+                #replace all same values in shared peers
                 for value in same_value:
                     if value in values[p]:
                         assign_value(values, p, values[p].replace(value,''))
